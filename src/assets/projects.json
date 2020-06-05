@@ -4,7 +4,7 @@
       "name": "test project 1",
       "url": "test.com",
       "desc": "a test project",
-      "photo_urls": [""],
+      "img": "http://placekitten.com/g/300/200",
       "document": "project1.json"
     }
   ]
