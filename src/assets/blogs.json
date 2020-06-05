@@ -1,0 +1,11 @@
+{
+  "posts": [
+    {
+      "name": "blog 1",
+      "url": "test.com",
+      "desc": "test blog desc",
+      "photo_urls": [""],
+      "document": "./blogs/blog1.json"
+    }
+  ]
+}

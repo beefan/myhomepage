@@ -1,4 +1,14 @@
 <template lang="pug">
-  div(class="about")
-    h1 This is an about page
+  div
+    h1 Bio
 </template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style>
+
+</style>

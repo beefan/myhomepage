@@ -1,0 +1,11 @@
+{
+  "projects": [
+    {
+      "name": "test project 1",
+      "url": "test.com",
+      "desc": "a test project",
+      "photo_urls": [""],
+      "document": "project1.json"
+    }
+  ]
+}
