@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    h1 Blog
+    h1 Projects
     b-col.project(v-for="project in projects.projects" v-bind:key="project.url" sm="4")
       h4 {{ project.name }}
       hr

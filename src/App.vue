@@ -14,7 +14,6 @@ div#app
         b-nav-item(to="/bio") Bio
   router-view
 </template>
-
 <style lang="sass">
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
 #app
