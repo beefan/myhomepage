@@ -13,6 +13,8 @@ div#app
       b-navbar-nav
         b-nav-item(to="/bio") Bio
   router-view
+  hr
+  h4.footer brandon fannin © 2020
 </template>
 <style lang="sass">
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
@@ -35,4 +37,7 @@ div#app
     color: #4580c0
   .brand
     font-weight: bold
+
+.footer 
+  padding: 2%
 </style>

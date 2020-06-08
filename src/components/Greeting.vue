@@ -12,8 +12,7 @@ export default {
       Hello there!
       Looks like you found my website.
       My name is Brandon. I make software stuff; enjoy running, reading, writing, camping, and gardening.
-      Take a look around. You'll find some stuff I've made or written, and some info about me.
-      Thanks for visiting!
+      Take a look around and thanks for visiting!
       `,
       displayGreeting: '',
       typingSpeed: '90'
