@@ -1,25 +1,52 @@
 <template lang="pug">
-  div
+  b-container
     h1 Blog
-    b-col.post(v-for="post in blog.posts" v-bind:key="post.url" sm="4")
-      h4 {{ post.name }}
-      hr
-      img(:src="post.img")
-      p {{ post.desc }}
+    div.post-container
+      div.post(v-for="post in blog" v-bind:key="post.url" @click="clickPost(post.url)") 
+        h4 {{ post.name }}
+        hr
+        img(:src="post.img")
+        p {{ post.desc }}
 </template>
 
 <script>
 export default {
   data() {
     return {
-      blog: require('../assets/blogs.json')
+        blog: [
+    {
+      "name": "Tech Elevator Coding Bootcamp Blog",
+      "url": "https://www.brandonfannin.com/tech-elevator-blog",
+      "desc": "Daily blog detailing my experience of a 14 wk intensive Java web dev coding bootcamp. ",
+      "img": require("@/assets/images/tech_elevator.jpeg"),
+      "document": "./blogs/blog1.json"
+    },
+    {
+      "name": "Vipassana - 10 Day Silent Meditation",
+      "url": "https://medium.com/@brandonfannin/vipassana-meditation-a-reflection-after-a-week-8e2fb800c295",
+      "desc": "My experience of a 10 day vipassana meditation retreat that I took over Christmas 2016.",
+      "img": require("@/assets/images/meditation_graphic.jpg"),
+      "document": "./blogs/blog1.json"
+    }
+  ]
+    }
+  },
+  methods: {
+    clickPost(url) {
+      const win = window.open(url, '_blank');
+      win.focus();
     }
   }
 }
 </script>
 
 <style lang="sass">
+.post-container
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
 .post
+  width: 45%
   margin: 2%
   padding: 2%
   border-radius: 5px
@@ -27,4 +54,7 @@ export default {
   color: black
   img
     margin-bottom: 5px
+    width: 100%
+.post:hover
+  box-shadow: 3px 3px 5px white, -3px -3px 6px white
 </style>
