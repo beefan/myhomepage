@@ -13,7 +13,12 @@ import {
   faTwitter
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import VueTimeline from "@growthbunker/vuetimeline";
 
+Vue.use(VueTimeline, {
+  // Specify the theme to use: dark or light (dark by default).
+  theme: "light"
+});
 library.add({ faEnvelope, faGithub, faLinkedin, faStrava, faTwitter });
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

@@ -2,55 +2,31 @@
   div
     h1 Bio
     hr
-    b-row
+    b-row.bio-row
       b-col.bio-content(sm="8")
         p If you've come this far, you probably want to know something about me. Well thanks, I'm flattered. 
         p Two words: profoundly curious. 
         p This applies to pretty much anything. If I have enough information to start to imagine how it works, I can become rapidly interested in just about anything.
         p I've spent a lot of time writing software. In fact, math/engineering/coding is the most consistent thread in my life. And I'll spend a lot more time writing code.
         p But, I also got a bachelors degree in Creative Writing. I'm fascinated by communication and language in general. This includes english metaphors in poetry as well as much more strict class definitions in computer science. 
-        p Four farming seasons, I've worked on organic market farms. Soil--the microbial interactions, the carbon sequestration, and the biological transformation that happens within it-- fascinates me greatly. Plus, I want to be growing my own food when society collapses. 
+        p Four farming seasons, I've worked on organic market farms. Soil--the microbial interactions, the carbon sequestration, and the biological transformation that happens within it-- suspends me in awe. Plus, I want to be growing my own food when society collapses. 
         p The problems I'm primarily interested in solving relate to how we can use software to create sustainable solutions to food shortages. Or how we can transform current software processes to carry less friction with users. But less friction towards self help or community connection, not less friction to a checkout screen.
         p I'm interested in how machine learning can be applied to build creative solutions to difficult problems in the human communication and food spaces.
-        p Before I die, I want to write a book and have a yard with a magnificent garden.
-        hr 
-        h4 brief biographical timeline 
-        ul
-          li
-            p 2020: Attended <a :href="links.te">Tech Elevator</a> coding bootcamp. Learned Java, javascript, Vue.js, PostgreSQL, web services, SpringMVC, CSS, HTML.
-          li
-            p 2017-2019: Studied Biology and Creative Writing at <a :href="links.owu">Ohio Wesleyan University</a>. Ultimately obtained my Create Writing B.A.
-            p At the same time, I worked in the grocery department at Whole Foods Market.
-          li 
-            p 2016-2017: Farm Apprentice for <a :href="links.shf">Methodist Seminary School in Ohio.</a> Learned how to operate a 5 acre vegetable farm using market and community-support profit models. 
-          li
-            p 2015: Left Detroit and the Sol Farm project. 
-            p Worked as a line cook for <a :href="links.northstar">Northstar Cafe.</a>
-          li
-            p 2014: Bought a house in Detroit for 3k. Started an urban farm project called <a :href="links.solfarm">Sol Farm</a>.
-            p Software development internship with <a :href="links.methode">Methode Electronics</a> working with Android Java, bluetooth, and google maps navigation. 
-          li
-            p 2013 Fall: Worked on an organic flower farm in Oregon.
-            p Traveled to Detroit to work on a small organic urban farm called <a :href="links.knucklehead">Knucklehead Farm</a>.
-          li
-            p 2013 Summer: Traveled throughout the U.S. for six weeks car camping and visiting National Parks. 
-            p Worked on a small organic community farm called <a :href="links.dharma">the Dharmalaya</a>. Spent a few weeks on <a :href="links.feral">Feral Farm</a>.
-          li
-            p 2013 Spring: Worked the Tech Support Help Desk at OSU, but dropped out of classes.
-          li
-            p 2012 Fall: Software development internship with <a :href="links.marathon">Marathon Petroleum</a> learning C# and Visual Studio. 
-          li 
-            p 2012 Summer: Software development internship with <a :href="links.ibm">IBM</a> learning Java, Eclipse, Agile, Maven, Junit, version control. 
-          li
-            p 2011-2012 Spring: Studied computer science at <a :href="links.osu">Ohio State.</a> C++, Matlab, Autodesk Inventor, Entrepreneurship, Math, Photoshop. 
-            p Worked the Tech Support Help Desk part time.
-          li
-            p 2011 Summer: Worked as an intern at <a :href="links.wrightpatt">Wright Patterson Air Force Base</a> in the Sensors Directorate. Mentored by the team doing research on wireless sensor networks, I learned python, linux, and bash scripting. 
-          li
-            p 2011 Spring: Graduated Kettering Fairmont High School.
-          li
-            p 2009: "Published" my first <a :href="links.ticalc">programs on TIcalc.org.</a> Chemistry helper, Alegbra helper, BlackJack, and Etch-a-Sketch.
+        p I want to author a book someday and help more people grow their own food. 
+        hr
       contact
+    b-row
+      div.timeline
+        h4 brief biographical timeline 
+        vue-timeline-update(
+          v-for="entry,index in timeline" 
+          v-bind:key="index"
+          :date="new Date(entry.date)"
+          :title="entry.title"
+          :description="entry.desc"
+          :category="entry.category"
+          :color="colorCat[entry.category]"
+          icon="code")
 </template>
 
 <script>
@@ -61,34 +37,141 @@ export default {
   },
   data() {
     return {
-      links: {
-        ticalc: "https://www.ticalc.org/archives/files/fileinfo/419/41951.html",
-        solfarm: "https://twitter.com/solfarmdetroit",
-        knucklehead: "http://www.uixdetroit.com/people/rietschumack.aspx",
-        feral: "https://www.feralfarmagroforestry.com/index.html",
-        dharma: "https://dharmalaya.org/",
-        shf: "https://www.seminaryhillfarm.org/",
-        northstar: "https://www.thenorthstarcafe.com/",
-        ibm: "https://www.ibm.com",
-        marathon: "https://www.marathonpetroleum.com",
-        methode: "https://www.methode.com",
-        wrightpatt: "https://www.wpafb.af.mil/",
-        te: "https://www.techelevator.com",
-        owu: "https://www.owu.edu",
-        osu: "https://www.osu.edu"
-      }
+      colorCat: {
+        education: "blue",
+        code: "red",
+        tech: "orange",
+        food: "purple"
+      },
+      timeline: [
+        {
+          date: "2020-04-17",
+          title: "Tech Elevator Graduation",
+          desc: "Graduated Tech Elevator coding bootcamp. Learned Java, javascript, Vue.js, PostgreSQL, web services, SpringMVC, CSS, HTML over 14 intensive weeks.",
+          category: "code",
+          link: "https://www.techelevator.com"
+        },
+        {
+          date: "2019-11-30",
+          title: "Whole Foods Market",
+          desc: "Spent two years in the grocery depart. at Whole Foods learning about product management, organization, distribution, and placement. As well as performing customer service.",
+          category: "food",
+          link: ""
+        },
+        {
+          date: "2019-05-09",
+          title: "College Graduation",
+          desc: "Graduated Ohio Wesleyan University with a B.A. in Creative Writing. Began study in Jan. 2017.",
+          category: "education",
+          link: "https://www.owu.edu"
+        },
+        {
+          date: "2017-08-15",
+          title: "Organic Farming Apprentice",
+          desc: "Worked 2 seasons at Seminary Hill Farm as a farm apprentice where I learned how to run a 5 acre veggie farm.",
+          category: "food",
+          link: ""
+        },
+        {
+          date: "2016-04-01",
+          title: "Line Cook",
+          desc: "Spent 1 year working as a line cook at whole foods restaurant, Northstar Cafe. Learned time management, food processing, cooking.",
+          category: "food",
+          link: ""
+        },
+        {
+          date: "2015-02-15",
+          title: "Sol Farm Detroit",
+          desc: "Bought a house in Detroit for 3k and created urban farming experiment in Detroit. Made it one year as a market garden.",
+          category: "food",
+          link: "https://twitter.com/solfarmdetroit"
+        },
+        {
+          date: "2014-12-01",
+          title: "Methode Electronics",
+          desc: "4 month software development internship working with Android Java, bluetooth, and google maps navigation.",
+          category: "code",
+          link: ""
+        },
+        {
+          date: "2014-08-10",
+          title: "Mac Professionals",
+          desc: "Worked for an all Apple product technical support coming doing phone support.",
+          category: "tech",
+          link: ""
+        },
+        {
+          date: "2013-10-01",
+          title: "WWOOFing in OR, WA, and MI",
+          desc: "Spent the summer and fall working on a small community vegetable farm in OR, a permaculture farm in the mountains of WA, a Dairy farm in MI, and an urban goat farm in Detroit.",
+          category: "food",
+          link: ""
+        },
+        {
+          date: "2013-05-01",
+          title: "Ohio State Help Desk",
+          desc: "Worked the Tech Support Help Desk while at Ohio State. Second semester 2013 took no classes and worked the help desk full time.",
+          category: "tech",
+          link: ""
+        },
+        {
+          date: "2012-12-31",
+          title: "Marathon Petroleum Internship",
+          desc: "4 month software development internship with Marathon learning C# and visual studio.",
+          category: "code",
+          link: ""
+        },
+        {
+          date: "2012-08-25",
+          title: "IBM Internship",
+          desc: "3 month software development internship with IBM learning Java, Eclipse, Agile, Maven, Junit, version control.",
+          category: "code",
+          link: ""
+        },
+        {
+          date: "2012-06-01",
+          title: "Ohio State University",
+          desc: "Studied engineering for one year taking classes in C++, Matlab, Autodesk Inventor, Math, Entrepreneurship, and Photoshop.",
+          category: "education",
+          link: ""
+        },
+        {
+          date: "2011-09-01",
+          title: "Wright Patterson Airforce Base",
+          desc: "Spent the summer being mentored by the Sensors Directorate doing research on wireless sensor networks. Learned python, bash, and linux.",
+          category: "code",
+          link: ""
+        },
+        {
+          date: "2011-06-01",
+          title: "High School Graduation",
+          desc: "Graduated Kettering Fairmont High School.",
+          category: "education",
+          link: ""
+        },
+        {
+          date: "2009-06-08",
+          title: "Calculator Programs",
+          desc: "Published my first programs on TIcalc.org. Chemistry helper, Alegbra helper, BlackJack, and Etch-a-Sketch.",
+          category: "code",
+          link: "https://www.ticalc.org/archives/files/fileinfo/419/41951.html"
+        }
+      ]
     }
   }
 }
 </script>
 
 <style lang="sass">
-.bio-content
-  margin: 2%
-  margin-left: 6%
+.bio-content, .timeline
+  margin-top: 2%
+  margin-left: 3% 
+  margin-right: 3%
   padding: 2%
   background: #f8f9fa
   color: black
   border-radius: 5px
   text-align: left
+.bio-row
+  justify-items: space-between
 </style>

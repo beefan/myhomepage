@@ -22,9 +22,9 @@ div#app
   -moz-osx-font-smoothing: grayscale
   text-align: center
   color: #fff
-  background: linear-gradient(#4580c0 50%, #f4a261 50%)
-  position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  background: repeating-linear-gradient(45deg, #f4a261, #f4a261 50%, #4580c0 50%, #4580c0)
+  [class^="gb-"]:not(.gb-base-icon)
+    font-family: 'Noto Sans JP', sans-serif !important;
 
 #nav
   width: 100%

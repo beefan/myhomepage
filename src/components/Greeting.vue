@@ -11,7 +11,7 @@ export default {
       `
       Hello there!
       Looks like you found my website.
-      My name is Brandon. I make software stuff and enjoy running, reading, writing, camping, and gardening.
+      My name is Brandon. I make software stuff; enjoy running, reading, writing, camping, and gardening.
       Take a look around. You'll find some stuff I've made or written, and some info about me.
       Thanks for visiting!
       `,
@@ -30,6 +30,7 @@ export default {
         let thisChar = this.greeting.substring(i, i + 1);
         switch(thisChar) {
           case '.':
+          case ';':
           case '!':
             timing*=3;
             break;
