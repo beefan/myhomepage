@@ -16,7 +16,7 @@ export default {
         blog: [
     {
       "name": "Tech Elevator Coding Bootcamp Blog",
-      "url": "https://www.brandonfannin.com/tech-elevator-blog",
+      "url": "https://beefan.github.io/tech-elevator-blog/",
       "desc": "Daily blog detailing my experience of a 14 wk intensive Java web dev coding bootcamp in 2020. ",
       "img": require("@/assets/images/tech_elevator.jpeg"),
       "document": ""
