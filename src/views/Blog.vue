@@ -17,16 +17,16 @@ export default {
     {
       "name": "Tech Elevator Coding Bootcamp Blog",
       "url": "https://www.brandonfannin.com/tech-elevator-blog",
-      "desc": "Daily blog detailing my experience of a 14 wk intensive Java web dev coding bootcamp. ",
+      "desc": "Daily blog detailing my experience of a 14 wk intensive Java web dev coding bootcamp in 2020. ",
       "img": require("@/assets/images/tech_elevator.jpeg"),
-      "document": "./blogs/blog1.json"
+      "document": ""
     },
     {
       "name": "Vipassana - 10 Day Silent Meditation",
       "url": "https://medium.com/@brandonfannin/vipassana-meditation-a-reflection-after-a-week-8e2fb800c295",
       "desc": "My experience of a 10 day vipassana meditation retreat that I took over Christmas 2016.",
       "img": require("@/assets/images/meditation_graphic.jpg"),
-      "document": "./blogs/blog1.json"
+      "document": ""
     }
   ]
     }
@@ -44,9 +44,12 @@ export default {
 .post-container
   display: flex
   flex-wrap: wrap
-  justify-content: space-between
+  justify-content: space-evenly
 .post
-  width: 45%
+  @media (min-width: 768px) 
+    width: 45%
+  @media (min-width: 1080px)
+    width: 30%
   margin: 2%
   padding: 2%
   border-radius: 5px
