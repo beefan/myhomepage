@@ -1,21 +1,20 @@
 <template lang="pug">
   div.home
-    Greeting
-    Carousel
+    SimpleContent
 </template>
 
 <script>
 // @ is an alias to /src
-import Greeting from "@/components/Greeting.vue";
-import Carousel from "@/components/Carousel.vue";
+import SimpleContent from "@/components/SimpleContent.vue";
 
 export default {
   name: "Home",
   components: {
-    Greeting,
-    Carousel
+    SimpleContent
   }
 };
 </script>
 <style lang="sass">
+.home
+
 </style>
