@@ -23,11 +23,11 @@ const routes = [
   //   name: "Projects",
   //   component: () => import("../views/Projects.vue")
   // },
-  // {
-  //   path: "/blog",
-  //   name: "Blog",
-  //   component: () => import("../views/Blog.vue")
-  // }
+  {
+    path: "/blog",
+    name: "Blog",
+    component: () => import("../views/Blog.vue")
+  }
 ];
 
 const router = new VueRouter({

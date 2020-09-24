@@ -1,14 +1,14 @@
 <template lang="pug">
-div#app
-  b-navbar#nav(toggleable="sm" type="light" variant="light")
-    b-navbar-brand.brand Brandon Fannin
+#app
+  b-navbar#nav(toggleable="sm", type="light", variant="light")
+    b-navbar-brand.brand(href="/") Brandon Fannin
   router-view
-  div.footer
+  .footer
     hr
     h4 brandon fannin © 2020
 </template>
 <style lang="sass">
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap')
 #app
   font-family: 'Noto Sans JP', sans-serif
   -webkit-font-smoothing: antialiased
@@ -22,12 +22,13 @@ div#app
   a
     font-weight: bold
     color: #f4a261
-  a.router-link-exact-active 
+  a.router-link-exact-active
     color: #4580c0
   .brand
+    color: #4580c0
     font-weight: bold
 
-.footer 
+.footer
   padding: 2%
   width: 100%
   position: fixed

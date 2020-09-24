@@ -19,7 +19,7 @@ function getNewFiles(directory) {
 }
 
 function getTagsFromFile(filename) {
-    path = './src/assets/blogs/' + filename;
+    path = './public/blog/' + filename;
     file = fs.readFileSync(path, 'utf8');
 
     indexOfTags = file.indexOf(':tags') + 5;
@@ -33,7 +33,7 @@ function getTagsFromFile(filename) {
 }
 
 function getAllMarkdownFiles() {
-    const files = fs.readdirSync('./src/assets/blogs/');
+    const files = fs.readdirSync('./public/blog/');
     return files.filter(file => file.substring(file.length - 3) == ".md");
 }
 

@@ -1,63 +1,68 @@
 <template lang="pug">
-  b-container
-    h1 Blog
-    div.post-container
-      div.post(v-for="post in blog" v-bind:key="post.url" @click="clickPost(post.url)") 
-        h4 {{ post.name }}
-        hr
-        img(:src="post.img")
-        p {{ post.desc }}
+b-container(v-if="tagPalette != null")
+  b-row#palette-main
+    b-form.tag-palette
+      b-button.mb-2.mr-sm-2.mb-sm-2(
+        @click="showFiles",
+        v-for="tag in tagPalette",
+        :size="tag.count < maxCount ? 'sm' : tag.count > 2 * maxCount ? 'lg' : 'md'",
+        pill,
+        variant="outline-info"
+      ) {{ tag.tag }}
+  b-row#file-list(v-if="filesToShow")
+    ul
+      li.file-list-item(@click="processFile", v-for="file in filesToShow") {{ file }}
+  b-row#file-view(v-if="loadedFile")
+    VueShowdown(:markdown="loadedFile")
 </template>
 
 <script>
+import blog from "./../assets/blogs/blog";
 export default {
   data() {
     return {
-        blog: [
-    {
-      "name": "Tech Elevator Coding Bootcamp Blog",
-      "url": "https://beefan.github.io/tech-elevator-blog/",
-      "desc": "Daily blog detailing my experience of a 14 wk intensive Java web dev coding bootcamp in 2020. ",
-      "img": require("@/assets/images/tech_elevator.jpeg"),
-      "document": ""
-    },
-    {
-      "name": "Vipassana - 10 Day Silent Meditation",
-      "url": "https://medium.com/@brandonfannin/vipassana-meditation-a-reflection-after-a-week-8e2fb800c295",
-      "desc": "My experience of a 10 day vipassana meditation retreat that I took over Christmas 2016.",
-      "img": require("@/assets/images/meditation_graphic.jpg"),
-      "document": ""
-    }
-  ]
+      tagPalette: null,
+      filesToShow: null,
+      loadedFile: null
+    };
+  },
+  computed: {
+    maxCount() {
+      return blog.getMaxTagCount() / 3;
     }
   },
+  mounted() {
+    this.fetchPalette();
+  },
   methods: {
-    clickPost(url) {
-      const win = window.open(url, '_blank');
-      win.focus();
+    fetchPalette() {
+      this.tagPalette = blog.getTags();
+    },
+    showFiles(event) {
+      const tag = event.target.innerText;
+      this.filesToShow = blog.getFilesByTag(tag);
+    },
+    async processFile(event) {
+      const filename = event.target.innerText;
+
+      const res = await fetch("/blog/" + filename);
+      const fileText = await res.text();
+
+      const beginIndex = fileText.indexOf("\n\n") + 1;
+      this.loadedFile = fileText.substring(beginIndex).trim();
     }
   }
-}
+};
 </script>
 
 <style lang="sass">
-.post-container
+#palette-main, #file-list, #file-view
   display: flex
-  flex-wrap: wrap
-  justify-content: space-evenly
-.post
-  @media (min-width: 768px) 
-    width: 45%
-  @media (min-width: 1080px)
-    width: 30%
-  margin: 2%
-  padding: 2%
-  border-radius: 5px
-  background-color: #f8f9fa
-  color: black
-  img
-    margin-bottom: 5px
-    width: 100%
-.post:hover
-  box-shadow: 3px 3px 5px white, -3px -3px 6px white
+  align-items: center
+  justify-content: space-around
+.tag-palette
+  margin: 5%
+.file-list-item
+  list-style-type: none
+  cursor: pointer
 </style>

@@ -8,6 +8,10 @@ module.exports = {
       {
         test: /\.pug$/,
         loader: "pug-plain-loader"
+      },
+      {
+        test: /\.md$/i,
+        use: 'raw-loader',
       }
     ]
   }

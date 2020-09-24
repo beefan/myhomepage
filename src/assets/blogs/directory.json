@@ -1,0 +1,24 @@
+{
+  "files": [
+    "2019-12-21-AccountsOfLost.md",
+    "2020-09-07-TestFile.md",
+    "2020-10-02-TestFile3.md"
+  ],
+  "tags": {
+    "dog": [
+      0,
+      2
+    ],
+    "cat": [
+      0,
+      1,
+      2
+    ],
+    "farmer": [
+      2
+    ],
+    "kitten": [
+      2
+    ]
+  }
+}
