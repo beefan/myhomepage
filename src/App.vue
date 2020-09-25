@@ -1,11 +1,8 @@
 <template lang="pug">
 #app
-  b-navbar#nav(toggleable="sm", type="light", variant="light")
-    b-navbar-brand.brand(href="/") Brandon Fannin
   router-view
   .footer
-    hr
-    h4 brandon fannin © 2020
+    h4 <a href="/">brandon fannin © 2020</a>
 </template>
 <style lang="sass">
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap')
@@ -29,7 +26,11 @@
     font-weight: bold
 
 .footer
-  padding: 2%
+  -webkit-box-shadow: 0px 44px 22px 46px rgba(219,210,219,1)
+  -moz-box-shadow: 0px 44px 22px 46px rgba(219,210,219,1)
+  box-shadow: 0px 44px 22px 46px rgba(219,210,219,1)
+  background-color: #fff
+  padding: 1%
   width: 100%
   position: fixed
   bottom: 0px

@@ -3,33 +3,46 @@ const fs = require('fs');
 updateBlogDirectory();
 
 function updateBlogDirectory() {
-    let directory = require('./directory.json');
-
-    newFiles = getNewFiles(directory);
+    const dir = "directory.json";
+    let directory = null;
+    try {
+        directory = require(`./${dir}`);
+    } catch (err) {
+        directory = {
+            "files": [],
+            "tags": {}
+        }
+    }
+    const newFiles = getNewFiles(directory);
     newFiles.forEach(filename => {
         addNewFileToDirectory(directory, filename)
     });
 
-    fs.writeFileSync('./src/assets/blogs/directory.json', JSON.stringify(directory));
+    fs.writeFileSync(`./src/assets/blogs/${dir}`, JSON.stringify(directory));
 }
 
 function getNewFiles(directory) {
-    files = getAllMarkdownFiles();
+    const files = getAllMarkdownFiles();
     return files.filter(x => !directory.files.includes(x));
 }
 
-function getTagsFromFile(filename) {
-    path = './public/blog/' + filename;
-    file = fs.readFileSync(path, 'utf8');
+function getMetadataFromFile(filename) {
+    const path = './public/blog/' + filename;
+    const file = fs.readFileSync(path, 'utf8');
 
-    indexOfTags = file.indexOf(':tags') + 5;
-    indexOfEndOfTags = file.indexOf('\n', indexOfTags);
+    const indexOfTags = file.indexOf(':tags') + 5;
+    const indexOfEndOfTags = file.indexOf('\n', indexOfTags);
 
-    tags = file.substring(indexOfTags, indexOfEndOfTags)
+    const indexOfDesc = file.indexOf(':desc') + 5;
+    const indexOfEndOfDesc = file.indexOf('\n', indexOfDesc);
+
+    const tags = file.substring(indexOfTags, indexOfEndOfTags)
         .trim()
         .split(', ');
 
-    return tags;
+    const desc = file.substring(indexOfDesc, indexOfEndOfDesc).trim();
+
+    return { tags: tags, desc: desc };
 }
 
 function getAllMarkdownFiles() {
@@ -38,10 +51,12 @@ function getAllMarkdownFiles() {
 }
 
 function addNewFileToDirectory(directory, filename) {
-    directory.files.push(filename);
-    tags = getTagsFromFile(filename);
-    index = directory.files.length - 1;
-    tags.forEach(tag => {
+    const metadata = getMetadataFromFile(filename);
+
+    directory.files.push({ name: filename, desc: metadata.desc, tags: metadata.tags });
+
+    const index = directory.files.length - 1;
+    metadata.tags.forEach(tag => {
         directory.tags[tag] ? directory.tags[tag].push(index) : directory.tags[tag] = [index];
     });
 }
