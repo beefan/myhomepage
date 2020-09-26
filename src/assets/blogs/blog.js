@@ -18,6 +18,10 @@ const blog = {
             if (len > max) max = len
         }
         return max;
+    },
+    findFileByName(name) {
+        const files = this.directory.files.filter(file => file.name == name);
+        return files[0] ? files[0] : 'filenotfound';
     }
 }
 
