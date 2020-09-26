@@ -3,8 +3,8 @@
   p hi, welcome. <a :href="links.linkedin" >linkedin</a> | <a :href="links.github" >github</a> | <a :href="links.twitter" >twitter</a> | <a :href="links.strava" >strava</a> | <a :href="links.email" >email</a>
   hr
   p I'm a software developer at Root Insurance in Columbus, Ohio. I have B.A. in Creative Writing. I'm fascinated by soil ecosystems and the contribution of microorganisms to sustainable food systems and carbon sequestration. 🌶️ 🍄 🥦
-  p How can we use machine learning to validate the efficiency and sustainability of new food systems design? How can we use natural language processing to create technology that takes human eccentricities into account? How are neural networks like our brains and how are they different? 🧠 🤔
-  p When I'm not pondering, I love getting outside in any way: camping, running, backpacking, biking, hiking. ⛺🏃‍♂️🚴‍♂️⛰️🌲
+  p How can we use machine learning to validate the efficiency and sustainability of new food systems design? How can we use natural language processing to create technology that takes human eccentricities into account? 💻 🧠 🤔
+  p When I'm not thinking, I love getting outside in any way: camping, running, backpacking, biking, hiking. ⛺ 🏃‍♂️ 🚴‍♂️ ⛰️ 🌲
   br
   hr
   p some writing <a :href="links.blog">general blog</a> | <a :href="links.te" >coding bootcamp blog</a> | <a :href="links.meditation">vipassana meditation</a>
