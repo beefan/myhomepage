@@ -68,7 +68,6 @@ export default {
           toaster: "b-toaster-top-center",
           href: "/blog"
         });
-        this.fetchPalette();
       } else {
         file.title = this.formatTitle(file.name);
         this.loadFile(file);

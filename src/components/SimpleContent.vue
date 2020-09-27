@@ -46,6 +46,7 @@ export default {
   a
     padding: 2%
     color: #f4a261
+    font-weight: bold
   a:hover
     color: #4580c0
 </style>

@@ -1,1 +1,32 @@
-{"files":[{"name":"2019-12-21-AccountsOfLost.md","desc":"this is a post about the thing we talked about","tags":["dog"]},{"name":"2020-09-07-TestFile.md","desc":"this is a post about the thing we talked about","tags":["dog","cat","farmer","hello"]},{"name":"2020-10-02-TestFile3.md","desc":"this is a post about the thing we talked about","tags":["dog","cat","farmer","kitten"]}],"tags":{"dog":[0,1,2],"cat":[1,2],"farmer":[1,2],"hello":[1],"kitten":[2]}}
+{
+    "files": [
+        {
+            "name": "2020-09-26-HowIMadeATopicFirstBlogInVue.md",
+            "desc": "I made this blog in Vue.js; this post explains how I went about it with some technical detail.",
+            "tags": [
+                "code",
+                "vue",
+                "javascript",
+                "node",
+                "npm"
+            ]
+        }
+    ],
+    "tags": {
+        "code": [
+            0
+        ],
+        "vue": [
+            0
+        ],
+        "javascript": [
+            0
+        ],
+        "node": [
+            0
+        ],
+        "npm": [
+            0
+        ]
+    }
+}
