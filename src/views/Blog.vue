@@ -1,6 +1,6 @@
 <template lang="pug">
 b-container(v-if="tagPalette != null")
-  b-row
+  b-row.nav-links
     a.home-link(href="/") Home /
     a.blog-link(href="/blog") Blog
   .post-header(v-if="loadedFile")
@@ -18,8 +18,9 @@ b-container(v-if="tagPalette != null")
         variant="outline-info"
       ) {{ tag.tag }}
   b-row#file-list(v-if="filesToShow")
-    ul
-      li.file-list-item(
+    b-list-group
+      b-list-group-item.file-list-item(
+        button,
         @click="processFile",
         v-for="(file, index) in filesToShow",
         :id="index"
@@ -34,7 +35,8 @@ b-container(v-if="tagPalette != null")
     p.link-text
     input(type="hidden")
   b-row#file-view(v-if="loadedFile")
-    VueShowdown(:markdown="loadedFile.text")
+    b-container
+      VueShowdown(:markdown="loadedFile.text")
 </template>
 
 <script>
@@ -155,6 +157,8 @@ export default {
   flex-flow: column
 .date, #file-view
   text-align: left
+.nav-links, .date
+  padding-left: inherit
 .blog-link:hover, .home-link
   color: #f4a261
 .home-link:hover
@@ -175,4 +179,6 @@ export default {
   padding-left: 1rem
 #error-message
   color: red
+img
+  width: 100%
 </style>
