@@ -1,32 +1,68 @@
 {
-    "files": [
-        {
-            "name": "2020-09-26-HowIMadeATopicFirstBlogInVue.md",
-            "desc": "I made this blog in Vue.js; this post explains how I went about it with some technical detail.",
-            "tags": [
-                "code",
-                "vue",
-                "javascript",
-                "node",
-                "npm"
-            ]
-        }
-    ],
-    "tags": {
-        "code": [
-            0
-        ],
-        "vue": [
-            0
-        ],
-        "javascript": [
-            0
-        ],
-        "node": [
-            0
-        ],
-        "npm": [
-            0
-        ]
+  "files": [
+    {
+      "name": "2020-09-26-HowIMadeATopicFirstBlogInVue.md",
+      "desc": "I made this blog in Vue.js; this post explains how I went about it with some technical detail.",
+      "tags": [
+        "code",
+        "vue",
+        "javascript",
+        "node",
+        "npm"
+      ]
+    },
+    {
+      "name": "2021-07-09-BuildingAFullStackAppUsingRailsAndVue.md",
+      "desc": "Everytime I start a new project, I wish I had a fork-ready repository to jump start development. Finally, I built one. Here's a tutorial walking through my process.",
+      "tags": [
+        "ruby",
+        "rails",
+        "bootstrap",
+        "full-stack",
+        "web development",
+        "rest api",
+        "code",
+        "vue",
+        "javascript"
+      ]
     }
+  ],
+  "tags": {
+    "code": [
+      0,
+      1
+    ],
+    "vue": [
+      0,
+      1
+    ],
+    "javascript": [
+      0,
+      1
+    ],
+    "node": [
+      0
+    ],
+    "npm": [
+      0
+    ],
+    "ruby": [
+      1
+    ],
+    "rails": [
+      1
+    ],
+    "bootstrap": [
+      1
+    ],
+    "full-stack": [
+      1
+    ],
+    "web development": [
+      1
+    ],
+    "rest api": [
+      1
+    ]
+  }
 }
