@@ -10,10 +10,10 @@ In the last post, we did some migrations and created some active records models.
 | Part                                                         | Topic                                                        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 1                                                            | [Intro and Setup](https://brandonfannin.com/blog/post/2021-07-09-BuildingAFullStackAppUsingRailsAndVuePart1.md) |
-| 2                                                            | [Migrations, Models, and RSpec](https://brandonfannin.com/blog/post/2021-07-09-BuildingAFullStackAppUsingRailsAndVuePart2.md) |
-| 3 <mark style="background-color: lightblue">(this post)</mark> | [Defining the Rails API](https://brandonfannin.com/blog/post/2021-07-09-BuildingAFullStackAppUsingRailsAndVuePart3.md) |
-| 4                                                            | [Creating a Login and Signup Page](https://brandonfannin.com/blog/post/2021-07-09-BuildingAFullStackAppUsingRailsAndVuePart4.md) |
-| 5                                                            | [Connecting the Login to the API](https://brandonfannin.com/blog/post/2021-07-09-BuildingAFullStackAppUsingRailsAndVuePart5.md) |
+| 2                                                            | [Migrations, Models, and RSpec](https://brandonfannin.com/blog/post/2021-07-15-BuildingAFullStackAppUsingRailsAndVuePart2.md) |
+| 3 <mark style="background-color: lightblue">(this post)</mark> | [Defining the Rails API](https://brandonfannin.com/blog/post/2021-07-23-BuildingAFullStackAppUsingRailsAndVuePart3.md) |
+| 4                                                            | [Creating a Login and Signup Page](https://brandonfannin.com/blog/post/2021-07-29-BuildingAFullStackAppUsingRailsAndVuePart4.md) |
+| 5                                                            | [Connecting the Login to the API](https://brandonfannin.com/blog/post/2021-08-02-BuildingAFullStackAppUsingRailsAndVuePart5.md) |
 
 ## Create the Controllers
 
